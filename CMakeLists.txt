@@ -23,5 +23,8 @@ MESSAGE(STATUS "This is SOURCE dir " ${Cmake_Practise_SOURCE_DIR})
 #while meaning ./build/bin while use cmake .. in build folder
 ADD_SUBDIRECTORY(src bin)
 
+#add sub dir:lib
+ADD_SUBDIRECTORY(lib)
+
 #compile main.c to execcutale main file
 #add_executable(main ${SRC_LIST})
