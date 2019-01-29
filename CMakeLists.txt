@@ -26,5 +26,8 @@ ADD_SUBDIRECTORY(src bin)
 #add sub dir:lib
 ADD_SUBDIRECTORY(lib)
 
+#add sub dir:libnoprefix
+ADD_SUBDIRECTORY(libnoprefix)
+
 #compile main.c to execcutale main file
 #add_executable(main ${SRC_LIST})

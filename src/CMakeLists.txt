@@ -1,8 +1,11 @@
 #in order to use lib, we should include its folder
-INCLUDE_DIRECTORIES(../lib/)
+INCLUDE_DIRECTORIES(../lib/ ../libnoprefix/)
 
 #line below is used for TARGET_LINK_LIBRARIES(main libsample.so)
 LINK_DIRECTORIES(${Cmake_Practise_SOURCE_DIR}/build/lib/lib)
+
+#line below is used for TARGET_LINK_LIBRARIES(main :noprefix.a)
+LINK_DIRECTORIES(${Cmake_Practise_SOURCE_DIR}/build/libnoprefix/libnoprefix)
 
 ADD_EXECUTABLE(main main)
 
@@ -19,3 +22,7 @@ ADD_EXECUTABLE(main main)
 #enter ./build/lib and run make to generate lib file first
 TARGET_LINK_LIBRARIES(main libsample.so)
 
+#add lib:noprefix.a. if lib not contain lib prefix,
+#it must be add : before like below
+#same as libsample, you should build noprefix first after run cmake ..
+TARGET_LINK_LIBRARIES(main :noprefix.a)
