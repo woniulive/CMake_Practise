@@ -12,6 +12,11 @@ ADD_LIBRARY(sample_static STATIC ${LIBSAMPLE})
 #because of name conflict, we use SET_TARGET_PROPERTIES
 SET_TARGET_PROPERTIES(sample_static PROPERTIES OUTPUT_NAME "sample")
 
+#create a so with version
+#2.3:so version
+#4:API version
+SET_TARGET_PROPERTIES(sample PROPERTIES VERSION 2.3 SOVERSION 4)
+
 #we can use GET_TARGET_PROPERTY to get value set by SET_TARGET_PROPERTIES
 #it will NOTFOUND if this property is not defined before
 GET_TARGET_PROPERTY(OUTPUT_VALUE sample_static OUTPUT_NAME)
